@@ -40,5 +40,6 @@ Team members:
 
 
 [1] Parrott, W. (2001), Emotions in Social Psychology, Psychology Press, Philadelphia links to the human emotions ontology later on possible Sentiment Analysis Service Response 
+
 [2] N. Diakopoulos, D. Shamma: Characterizing: Debate Performance via Aggregated Twitter Sentiment, CHI 2010 
 
