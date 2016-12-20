@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Twista - Evolution on Twitter Sentiment Analysis</title>
+	<div ALIGN="center"><img src="twistaLogoMini.jpg" alt="TwiStA"  /> </div>
+
+	<script src="http://api.simile-widgets.org/timeplot/1.1/timeplot-api.js" 
+       type="text/javascript"></script>
+	<script type ="text/javascript">
+	var timeplot;
+
+	function onLoad() {
+		var eventSource = new Timeplot.DefaultEventSource();
+		var timeGeometry = new Timeplot.DefaultTimeGeometry({
+			gridColor: new Timeplot.Color("#000000"),
+			axisLabelsPlacement: "top"
+		});
+
+		var valueGeometry = new Timeplot.DefaultValueGeometry({
+			gridColor: "#000000",
+			min: 0,
+			max: 100
+		});
+		var plotInfo = [
+			Timeplot.createPlotInfo({
+			  id: "plot1",
+			  dataSource: new Timeplot.ColumnSource(eventSource,1),
+			  timeGeometry: timeGeometry,
+			  valueGeometry: valueGeometry,
+			  valueGeometry: new Timeplot.DefaultValueGeometry({
+				gridColor: "#000000",
+				axisLabelsPlacement: "left",
+				min: 0,
+				max: 100
+			  }),
+			  timeGeometry: new Timeplot.DefaultTimeGeometry({
+				gridColor: "#000000",
+				axisLabelsPlacement: "top"
+			  }),
+			  lineColor: "#ff0000",
+			  fillColor: "#ff0000",
+			  showValues: true
+			}),
+			Timeplot.createPlotInfo({
+			  id: "plot2",
+			  dataSource: new Timeplot.ColumnSource(eventSource,2),
+			  timeGeometry: timeGeometry,
+			  valueGeometry: valueGeometry,
+			  lineColor: "#0000ff",
+			  fillColor: "#0000ff",
+			  showValues: true
+			}),
+			Timeplot.createPlotInfo({
+			  id: "plot3",
+			  dataSource: new Timeplot.ColumnSource(eventSource,3),
+			  timeGeometry: timeGeometry,
+			  valueGeometry: valueGeometry,
+			  lineColor: "#00ff00",
+			  fillColor: "#00ff00",
+			  showValues: true
+			})
+		  ];	  
+		timeplot = Timeplot.create(document.getElementById("sentimentTimeplot"), plotInfo);
+		timeplot.loadText("bush_ratings.txt", ",", eventSource);
+}			 
+
+	var resizeTimerID = null;
+	function onResize() {
+		if (resizeTimerID == null) {
+			resizeTimerID = window.setTimeout(function() {
+				resizeTimerID = null;
+				timeplot.repaint();
+			}, 100);
+		}
+	}
+	
+	function displaySentiments(){
+		onLoad();
+		drawChart();
+	}
+	</script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable(
+		 {
+		   cols: [{id: 'sentiment', label: 'Sentiment', type: 'string'},
+					{id: 'amount', label: 'Amount', type: 'number'}],
+		   rows: [{c:[{v: 'Positive Feelings'}, {v: 11}]},
+				  {c:[{v: 'Negative Feelings'}, {v: 2}]},
+				  {c:[{v: 'Neutral Feelings'}, {v: 3}]}
+				 ]
+		 },
+	   0.6
+	)
+	var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+    chart.draw(data, {width: 450, height: 300, title: 'Feelings Distribution'});
+      }
+    </script>
+    
+  </head>
+  <body onload="displaySentiments();" onresize="onResize();">
+	<p style="font-family:Arial Rounded MT Bold;color:black;font-size:20px;">POLITICS: How happy the World feels about...?</p>
+	<form name="input" action="#" method="get">
+		KeyWord / HashTag: <input type="text" name="KeyWord" value="" /><br />
+	<input type="submit" value="Submit" />
+	<TD><IMG BORDER="0" WIDTH="200" HEIGHT="200" SRC="twister.jpg"></TD>
+
+	</form>
+	<div id="sentimentTimeplot" style="height: 150px;"></div>
+	<p style="font-family:Arial Rounded MT Bold;color:red;font-size:20px;">+ Positive Feelings :)</p>
+	<p style="font-family:Arial Rounded MT Bold;color:blue;font-size:20px;">- Negative Feelings :(</p>
+	<p style="font-family:Arial Rounded MT Bold;color:orange;font-size:20px;">/ Neutral Feelings :|</p>
+	<TD><IMG BORDER="0" WIDTH="200" HEIGHT="200" SRC="obama.jpg"></TD>
+
+	<CENTER>
+		<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="2" ALIGN="Center">
+		<TR>
+		<TD><IMG BORDER="0" WIDTH="200" HEIGHT="200" SRC="obama.jpg"></TD>
+		<TD><IMG BORDER="0" WIDTH="200" HEIGHT="200"SRC="bush.jpg"></TD>
+		</TR>
+		<TR>
+		<TD><IMG BORDER="0" WIDTH="200" HEIGHT="200" SRC="berlusconi.jpg"></TD>
+		<TD><IMG BORDER="0" WIDTH="200" HEIGHT="200" SRC="binladen.jpg"></TD>
+		</TR>
+		</TABLE>
+	</CENTER>
+	<div id="pie-chart"></div>
+	
+  </body>
+</html>

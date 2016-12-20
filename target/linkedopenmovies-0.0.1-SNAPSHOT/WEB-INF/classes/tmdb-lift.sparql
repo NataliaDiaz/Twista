@@ -1,0 +1,16 @@
+PREFIX temp: <http://www.linkedopenservices.org/ns/temp-json#>
+PREFIX img: <http://jibbering.com/vocabs/image/>
+PREFIX dcm: <http://purl.org/dc/dcmitype/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+CONSTRUCT {
+	?q a foaf:image .
+	?q img:height ?he .
+	?q img:width ?we .
+	}
+WHERE {
+	?z temp:image ?y .
+	?y temp:url ?x .
+	?y temp:height ?he .
+	?y temp:width ?we 
+	BIND(IRI(?x) AS ?q)
+	}

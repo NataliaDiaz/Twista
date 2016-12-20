@@ -1,0 +1,9 @@
+PREFIX dc:<http://purl.org/dc/terms/> 
+PREFIX dbpo:<http://dbpedia.org/ontology/> 
+
+SELECT ?movie ?title ?year 
+WHERE { 
+		?movie a dbpo:film. 
+		?movie dc:title ?title. 
+			OPTIONAL{ ?movie dc:date ?year . } 
+	  }

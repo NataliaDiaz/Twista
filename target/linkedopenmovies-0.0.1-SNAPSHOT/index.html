@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>Meine RESTful-Webservice-Startseite</title>
+</head>
+<body>
+  <h3> Meine RESTful-Webservice-Startseite </h3>
+  
+  <table border="0">
+<tr>
+<td>Post new request:</td>
+</tr>
+<tr>
+<td><form action="/linkedopenmovies/rs/service" method="POST">
+
+<TEXTAREA NAME="input" COLS="70" ROWS="40">
+@prefix movie: <http://data.linkedmdb.org/resource/movie/> .
+@prefix dc: <http://purl.org/dc/terms/> . 
+@prefix dbp: <http://dbpedia.org/resource/> . 
+@prefix loms: <http://localhost:8080/linkedopenmovies/rs/> . 
+_:a1 a dbp:movie.
+_:a1 loms:imdbId "tt0137523" .
+</TEXTAREA> <BR>
+
+<div>
+<input type="submit" value="Commit">
+
+</div>
+</form>
+</td>
+
+</tr>
+</table>
+  
+  <p> <a href="/linkedopenmovies/rs/service/movieInfo?name=ich">/JaxRsMitEclipse/rs/helloworld?name=ich</a> </p>
+</body>
+</html>

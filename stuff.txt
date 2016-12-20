@@ -1,0 +1,8 @@
+@prefix sparql: <http://www.w3.org/TR/rdf-sparql-query/#> .@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .@prefix wsl: <http://www.wsmo.org/wsmo-lite#> .@prefex posm: <http://www.wsmo.org/ns/posm/0.1#> .@prefix twista: <"+uriInfo.getBaseUri()+"twista/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix sioc_t: <http://rdfs.org/sioc/types#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema/> .
+@prefix sent: <http://localhost:8080/rs/twista/> .
+twista:analyseSentiment rdf:type posm:Service;posm:hasInputMessage [sawsdl:modelReference _:input];posm:hasOutputMessage [sawsdl:modelReference _:output];sawsdl:loweringSchemaMapping <"+uriInfo.getBaseUri()+"tweet/analyseSentiment/lower.sparql> ._:input rdf:value "{?p a sioc:Post; sioc:creator ?creator; sioc:content ?content. ?creator twista:num_followers ?follownumber; twista:num_followedby ?num_followedBy .  }}"ˆˆsparql:GraphPattern ._:output rdf:value "{_:emotion a ?x; sent:foundIn ?p . ?x rdfs:subClassOf sent:Sentiment . ?p sioc:topic _:d . _:d rdfs:label ?topiclabel . }"ˆˆsparql:GraphPattern .
+

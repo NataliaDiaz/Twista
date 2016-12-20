@@ -1,0 +1,141 @@
+body
+{
+	background-color: #17226c;
+	color: #ffffff;
+	font-family: "Comic Sans MS";
+	text-align: center;
+	padding-top: 40px;
+	margin: 0px;	
+	margin-bottom: 50px;
+}
+
+#Header{
+	height: 170px;
+	width : 800px;
+    background-color: black;
+    color: white;
+	text-align: centre;
+}
+
+#Container{
+	width : 800px;
+	margin: 0 auto;
+}
+
+#Content{
+	width : 800px;
+    background-color:e1e0e2;
+    color: white;
+	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.serie
+{
+	background-color: #7f7f7f;
+	color: #17226c;
+	margin: 15px;
+	margin-bottom: 40px;
+	margin-top: 0px;
+    padding-bottom: 10px;
+	float: none;
+}
+
+.serieHeaderLeft
+{
+	float: none;
+	margin-left: 10px;
+}
+
+.serieRate
+{
+	margin-left: 20px;
+}
+
+.serieLanguage
+{
+	margin-left: 20px;
+}
+
+.serieHeaderRight
+{
+	float: right;
+	margin-right: 30px;
+	padding-top: 10px;
+}
+
+.serieHeaderBottom
+{
+	float: none;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.abstract
+{
+	margin-top: 0px;
+	font-size: 10 pt;
+	margin-bottom: 25px;
+}
+
+.season
+{
+	background-color: c3c3c3;
+	margin: 10px;
+}
+
+.specials
+{
+	background-color: c3c3c3;
+	margin: 10px;
+}
+
+
+.serieTitle{
+	font-size: 26 pt;
+}
+
+.seasonTitle{
+	background-color: #a3a3a3;
+	color: black;
+	font-size: 14pt;
+}
+
+.chapter{
+	background-color: #c3c3c3;
+	color: #2d34c1;
+}
+
+.chapter:hover {
+	background-color: #c3c3c3;
+	color: #000000;
+}
+
+.specialsTitle{
+	background-color: #a3a3a3;
+	color: black;
+	font-size: 14pt;
+}
+
+.specialChapter{
+	background-color: #c3c3c3;
+	color: #2d34c1;
+}
+
+table{
+	margin: 0px;
+}
+
+.tableNumber{
+	width: 40px;
+}
+
+.tableTitle{
+	width: 590px;
+}
+
+.tableAired{
+	text-align: justify;
+}
