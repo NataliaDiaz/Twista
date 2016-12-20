@@ -2,18 +2,23 @@
 An Evolution Timeline Sentiment Analysis in Politics Microblogging via Twitter microblogging and Linked Open Services for Sentiment Analysis. 
  -Summer school on Semantic Computing, UC Berkeley Hackathon winner project 2011-
 
-Dependency: Timeline Gadget used: http://www.simile-widgets.org/timeplot/docs/
 Prezi presentation: https://prezi.com/tqvx8wa7xhq9/twista/
 
 
 
+Dependency: 
+<li>Timeline Gadget used: http://www.simile-widgets.org/timeplot/docs/
+<li>Stanford NLP
+
+Tasks:
 <li>Generation of RDF by employing JSON2RDF (generic lifting).
 <li>Semantic Lifting happens via SPARQL CONSTRUCT Service Call 
 <li>SPARQL Endpoint Query Query for additional data in DBpedia (Extract all necessary information from triple store (SPARQL))
 <li>Builds JSP and data files for libraries to visualize results RDF Input RDF Output Sentiment Ontology models the six basic human emotions [1]
- 
 
-Feature set Pattern based features
+Data: Annotated Tweets related to the U.S. electional debate from 2008 via Mechanical Turk: 4 classes, 3,238 multiple annotated Tweets
+
+Feature set:
 <li>SentiWordNet based features
 <li>Token based features (tokens occurring, total #token)
 <li>Linguistic features (POS-codes)
@@ -34,6 +39,6 @@ Team members:
 <li>Carmen Vaca (vacaruiz@elet.polimi.it) API Extract Tweets + Info that is tagged with the retrieved Keyword.
 
 
-[1] Parrott, W. (2001), Emotions in Social Psychology, Psychology Press, Philadelphia links to the human emotions ontology later on possible Sentiment Analysis Service Response [2] N. Diakopoulos, D. Shamma: Characterizing: Debate
-Performance via Aggregated Twitter Sentiment, CHI 2010
-Annotated Tweets related to the U.S. electional debate from 2008 via Mechanical Turk: 4 classes, 3,238 multiple annotated Tweets
+[1] Parrott, W. (2001), Emotions in Social Psychology, Psychology Press, Philadelphia links to the human emotions ontology later on possible Sentiment Analysis Service Response 
+[2] N. Diakopoulos, D. Shamma: Characterizing: Debate Performance via Aggregated Twitter Sentiment, CHI 2010 
+
